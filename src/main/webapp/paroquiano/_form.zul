@@ -1,0 +1,158 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="container-fluid">
+        <div zclass="row">
+            <div zclass="col-md-12">
+                <div zclass="panel panel-default">
+                    <div zclass="panel-heading">Dados Cadastrais</div>
+                    <div zclass="panel-body">
+                        <div zclass="row">
+                        <div zclass="col-md-6">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Capela</label>
+                                <combobox width="100%" style="margin-top: 10px;" model="@load(vm.comunidadesList)" selectedItem="@bind(vm.comunidade)">
+                                    <template name="model" var="comunidade">
+                                        <comboitem label="@load(comunidade.nome)"/>
+                                    </template>
+                                </combobox>
+                            </div>
+                        </div>
+                        </div>
+                        <div zclass="row">
+                        <div zclass="col-md-6">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Nome</label>
+                                <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.paroquiano.nome)"/>
+                            </div>
+                        </div>
+                        <div zclass="col-md-3">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Data de Nascimento</label>
+                                <datebox width="100%" height="34px" style="margin-top: 10px;" format="dd/MM/yyyy" value="@bind(vm.paroquiano.dataNascimento)"/>
+                            </div>
+                        </div>
+                        <div zclass="col-md-3">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Sexo</label>
+                                <combobox width="100%"  style="margin-top: 10px;" model="@load(vm.sexoList)" selectedItem="@bind(vm.sexo)">
+                                    <!--model="@load(vm.sexoList)" selectedItem="@bind(vm.shirtSize)">-->
+                                    <template name="model" var="sexo">
+                                        <comboitem label="@load(sexo)"/>
+                                    </template>
+                                </combobox>
+                            </div>
+                        </div>
+
+                        <div zclass="col-md-6">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Pai</label>
+                                <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.paroquiano.pai.nome)" disabled="true"/>
+                            </div>
+                        </div>
+                        <div zclass="col-md-6">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Mãe</label>
+                                <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.paroquiano.mae.nome)" disabled="true"/>
+                            </div>
+                        </div>
+                        <div zclass="col-md-6">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Cônjuge</label>
+                                <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.paroquiano.conjuge.nome)" disabled="true"/>
+                            </div>
+                        </div>
+                        <div zclass="col-md-3">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Data de Casamento</label>
+                                <datebox width="100%" height="34px" style="margin-top: 10px;" format="dd/MM/yyyy" disabled="true"/>
+                            </div>
+                        </div>
+                        <div zclass="col-md-3">
+                            <div zclass="form-group">
+                                <label style="font-size: 18px;">Dizimista?</label>
+                                <combobox width="100%" style="margin-top: 10px;" model="@load(vm.dizimoList)" selectedItem="@bind(vm.dizimista)">
+                                    <!--model="@load(vm.dizimoList)" selectedItem="@bind(vm.dizimista)">-->
+                                    <template name="model" var="dizimo">
+                                        <comboitem label="@load(dizimo)"/>
+                                    </template>
+                                </combobox>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div zclass="row">
+            <div zclass="col-md-12">
+                <div zclass="panel panel-default">
+                    <div zclass="panel-heading">Dados de endereço</div>
+                    <div zclass="panel-body">
+                        <div zclass="row">
+                            <div zclass="col-md-4">
+                                <div zclass="form-group">
+                                    <label style="font-size: 18px;">CEP</label>
+                                    <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.endereco.cep)"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div zclass="row">
+                            <div zclass="col-md-7">
+                                <div zclass="form-group">
+                                    <label style="font-size: 18px;">Endereço</label>
+                                    <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.endereco.endereco)"/>
+                                </div>
+                            </div>
+                            <div zclass="col-md-1">
+                                <div zclass="form-group">
+                                    <label style="font-size: 18px;">Número</label>
+                                    <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.endereco.numero)"/>
+                                </div>
+                            </div>
+                            <div zclass="col-md-4">
+                                <div zclass="form-group">
+                                    <label style="font-size: 18px;">Complemento</label>
+                                    <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.endereco.complemento)"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div zclass="row">
+            <div zclass="col-md-12">
+                <div zclass="panel panel-default">
+                    <div zclass="panel-heading">Contatos</div>
+                    <div zclass="panel-body">
+                        <div zclass="row">
+                            <div zclass="col-md-4">
+                                <div zclass="form-group">
+                                    <label style="font-size: 18px;">Tipo de Contato</label>
+                                    <combobox width="100%" style="margin-top: 10px;" selectedItem="@bind(vm.tipoContato)" model="@load(vm.contatoList)">
+                                        <template name="model" var="contato">
+                                            <comboitem label="@load(contato)"/>
+                                        </template>
+                                    </combobox>
+                                </div>
+                            </div>
+                            <div zclass="col-md-6">
+                                <div zclass="form-group">
+                                    <label style="font-size: 18px;">Descrição</label>
+                                    <textbox zclass="form-control" style="margin-top: 10px;" value="@bind(vm.contato.descricao)"/>
+                                </div>
+                            </div>
+                            <div zclass="col-md-2">
+                                <div zclass="form-group">
+                                    <button zclass="btn btn-primary" label="Adicionar" width="100%" style="margin-top:30px;" onClick="@command('adicionarContato')"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div zclass="col-md-12" visible="@load(vm.showContatoLista)">
+                            <include src="/paroquiano/_listaParoquiano.zul"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</zk>

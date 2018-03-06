@@ -1,0 +1,18 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <listbox mold="paging" pageSize="10" model="@load(vm.paroquianoList)" selectedItem="@bind(vm.paroquiano)">
+        <listhead>
+            <listheader label="ID"/>
+            <listheader label="NOME"/>
+            <listheader label="DATA NASCIMENTO"/>
+            <listheader label="COMUNIDADE"/>
+        </listhead>
+        <template name="model" var="paroquiano">
+            <listitem onClick="@command('editarParoquiano')">
+                <listcell label="@bind(paroquiano.id)"></listcell>
+                <listcell label="@bind(paroquiano.nome)"></listcell>
+                <listcell label="@bind(paroquiano.dataNascimento) @converter('formatedDate',format='dd/MM/yyyy')"></listcell>
+                <listcell label="@bind(paroquiano.comunidade.nome)"></listcell>
+            </listitem>
+        </template>
+    </listbox>
+</zk>

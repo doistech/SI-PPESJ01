@@ -1,0 +1,19 @@
+ <zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+        <listbox mold="paging" pageSize="10">
+            <!--model="@load(vm.exameList)"-->
+            <listhead>
+                <listheader label="ID"/>
+                <listheader label="NOME"/>
+                <listheader label="MÊS"/>
+                <listheader label="VALOR R$"/>
+            </listhead>
+            <!--<template name="model" var="exame">-->
+            <!--<listitem>-->
+            <!--<listcell label="@bind(exame.id)" style="width:30px;"></listcell>-->
+            <!--<listcell label="@bind(exame.nome)"></listcell>-->
+            <!--<listcell label="@bind(exame.sigla)"></listcell>-->
+            <!--<listcell label="@bind(exame.material)"></listcell>-->
+            <!--</listitem>-->
+            <!--</template>-->
+        </listbox>
+ </zk>

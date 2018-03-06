@@ -1,0 +1,92 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <n:nav class="navbar navbar-inverse">
+        <n:div class="container-fluid">
+            <n:div class="navbar-header">
+                <n:a class="navbar-brand" href="#">Ecclesia System 1.0</n:a>
+            </n:div>
+            <n:ul class="nav navbar-nav">
+                <n:li class=""><n:a href="#">Home</n:a></n:li>
+                <!--<n:li><n:a href="#">Pedidos</n:a></n:li>  active-->
+                <n:li class="dropdown">
+                    <n:a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros
+                        <n:span class="caret"></n:span></n:a>
+                    <n:ul class="dropdown-menu">
+                        <n:li>
+                            <n:a href="#">Paróquia</n:a>
+
+                        </n:li>
+                        <n:li><n:a href="#">Comunidades(Capelas)</n:a></n:li>
+                        <n:li><n:a href="#">Pastorais</n:a></n:li>
+                        <n:li>
+                            <!--<n:a href="#"></n:a>-->
+                            <a onClick="@command('changePage', contexto = 'paroquiano')">Paroquianos</a>
+                        </n:li>
+                        <!--<n:li><n:a href="#">Produtos</n:a></n:li>-->
+                    </n:ul>
+                </n:li>
+                <n:li class="dropdown">
+                    <n:a class="dropdown-toggle" data-toggle="dropdown" href="#">Pastoral
+                        <n:span class="caret"></n:span></n:a>
+                    <n:ul class="dropdown-menu">
+                        <n:li><n:a href="#">Coordenação</n:a></n:li>
+                        <n:li><n:a href="#">Membros</n:a></n:li>
+                        <!--<n:li><n:a href="#">Pedidos Feitos</n:a></n:li>-->
+                        <!--<n:li><n:a href="#">Rica</n:a></n:li>-->
+                    </n:ul>
+                </n:li>
+                <n:li class="dropdown">
+                    <n:a class="dropdown-toggle" data-toggle="dropdown" href="#">Inscrições
+                        <n:span class="caret"></n:span></n:a>
+                    <n:ul class="dropdown-menu">
+                        <n:li><n:a href="#">Batismo</n:a></n:li>
+                        <n:li><n:a href="#">Catequese</n:a></n:li>
+                        <!--<n:li><n:a href="#">Pedidos Feitos</n:a></n:li>-->
+                        <n:li><n:a href="#">Rica</n:a></n:li>
+                    </n:ul>
+                </n:li>
+                <!--<n:li><n:a href="#">Cadastros</n:a></n:li>-->
+                <n:li class="dropdown">
+                    <n:a class="dropdown-toggle" data-toggle="dropdown" href="#">Financeiro
+                    <n:span class="caret"></n:span></n:a>
+                    <n:ul class="dropdown-menu">
+                        <n:li><n:a href="#">Excursões</n:a></n:li>
+                        <n:li><n:a href="#">Rifas/Bingos</n:a></n:li>
+                        <n:li>
+                            <a onClick="@command('changePage', contexto = 'dizimo')">Dízimo</a>
+                        </n:li>
+                    </n:ul>
+                </n:li>
+                <n:li class="dropdown">
+                    <n:a class="dropdown-toggle" data-toggle="dropdown" href="#">Configuração
+                        <n:span class="caret"></n:span></n:a>
+                    <n:ul class="dropdown-menu">
+                        <n:li><n:a href="#">Usuários</n:a></n:li>
+                        <!--<n:li><n:a href="#">Pedidos</n:a></n:li>-->
+                    </n:ul>
+                </n:li>
+                <n:li class="dropdown">
+                    <n:a class="dropdown-toggle" data-toggle="dropdown" href="#">Site
+                        <n:span class="caret"></n:span></n:a>
+                    <n:ul class="dropdown-menu">
+                        <n:li>
+                            <a onClick="@command('changePage', contexto = 'avisos')"  style="font-size: 14px;">Avisos</a>
+                        </n:li>
+                        <n:li>
+                            <a onClick="@command('changePage', contexto = 'banner')"  style="font-size: 14px;">Banner</a>
+                        </n:li>
+                        <!--<n:li><n:a href="#">Pedidos</n:a></n:li>-->
+                    </n:ul>
+                </n:li>
+            </n:ul>
+            <n:ul class="nav navbar-nav navbar-right">
+                <n:li><n:a href="#"><n:span class="glyphicon glyphicon-user"></n:span> Olá, ${usuario.usuario}</n:a></n:li>
+                <n:li>
+                    <a onClick="@command('logoff')">
+                    <n:span class="glyphicon glyphicon-log-in"></n:span>
+                        Sair
+                    </a>
+                </n:li>
+            </n:ul>
+        </n:div>
+    </n:nav>
+</zk>

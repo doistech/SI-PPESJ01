@@ -1,0 +1,26 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <listbox mold="paging" pageSize="10" model="@load(vm.bannerList)">
+        <listhead>
+            <listheader label="NOME" style="width: 120px;"/>
+            <listheader label="DE" style="width: 120px;"/>
+            <listheader label="ATÉ" style="width: 120px;"/>
+            <listheader label="BANNER URL" style="width: 110px;"/>
+            <listheader label="LINK"/>
+            <!--<listheader label="CELULAR"/>-->
+        </listhead>
+        <template name="model" var="banner">
+            <listitem>
+                <listcell label="@bind(banner.nome)" style="width: 120px;"></listcell>
+                <listcell label="@bind(banner.dataInicio)  @converter('formatedDate',format='dd/MM/yyyy')" style="width: 120px;"></listcell>
+                <listcell label="@bind(banner.dataFim)  @converter('formatedDate',format='dd/MM/yyyy')" style="width: 120px;"></listcell>
+                <listcell label="@bind(banner.url)" style="width: 110px;"></listcell>
+                <listcell label="@bind(aviso.link)"></listcell>
+            </listitem>
+        </template>
+    </listbox>
+    <div zclass="row">
+        <div zclass="col-md-12" style="text-align: right;">
+            <button zclass="btn btn-success" label="Novo Banner" style="margin-top:15px;" onClick="@command('novoBanner')"/>
+        </div>
+    </div>
+</zk>

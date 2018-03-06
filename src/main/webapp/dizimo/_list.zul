@@ -1,0 +1,16 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <listbox mold="paging" pageSize="10" model="@load(vm.dizimistaList)" selectedItem="@bind(vm.dizimo)">
+        <listhead>
+            <listheader label="CARTEIRA"/>
+            <listheader label="NOME"/>
+            <listheader label="CAPELA"/>
+        </listhead>
+        <template name="model" var="dizimista">
+            <listitem onClick="@command('abrirContribuicao')">
+                <listcell label="@bind(dizimista.codigoCarteira)"></listcell>
+                <listcell label="@bind(dizimista.dizimista.nome)"></listcell>
+                <listcell label="@bind(dizimista.comunidade.nome)"></listcell>
+            </listitem>
+        </template>
+    </listbox>
+</zk>

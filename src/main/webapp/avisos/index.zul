@@ -1,0 +1,30 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="container-fluid"
+         apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('br.com.doistech.ecclesiasystem.viewmodel.AvisosVM')">
+        <div zclass="row">
+            <div zclass="col-md-12">
+                <div zclass="page-header">
+                    <n:h1>Avisos Paroquiais</n:h1>
+                </div>
+            </div>
+        </div>
+        <n:br/>
+        <!--<div zclass="row">-->
+            <!--<div zclass="col-md-12">-->
+                <!--<include src="/dizimo/_pesquisa.zul"/>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div zclass="row" visible="@load(vm.showList)">
+            <div zclass="col-md-12">
+                <include src="/avisos/_list.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showForm)" style="margin-bottom: 15px;">
+            <div zclass="col-md-12">
+               <!--<include src="/avisos/_list.zul"/>-->
+                <include src="/avisos/_form.zul"/>
+            </div>
+        </div>
+    </div>
+</zk>

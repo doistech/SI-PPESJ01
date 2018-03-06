@@ -1,0 +1,39 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="container-fluid"
+         apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('br.com.doistech.ecclesiasystem.viewmodel.ParoquianoVM')">
+        <div zclass="row">
+            <div zclass="col-md-12">
+                <div zclass="page-header">
+                    <n:h1>Cadastro de Paroquiano</n:h1>
+                </div>
+            </div>
+        </div>
+        <n:br/>
+        <div zclass="row" visible="@load(vm.showPesquisa)">
+            <div zclass="col-md-12">
+                <include src="/paroquiano/_pesquisa.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showPesquisa)">
+            <div zclass="col-md-12">
+                <include src="/paroquiano/_list.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showPesquisa)">
+            <div zclass="col-md-12" style="text-align: right; margin-top: 10px;">
+                <button zclass="btn btn-success" onClick="@command('novoParoquiano')" label="Novo Paroquiano"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showForm)">
+            <div zclass="col-md-12">
+               <include src="/paroquiano/_form.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showForm)">
+            <div zclass="col-md-12">
+                <include src="/paroquiano/_acao.zul"/>
+            </div>
+        </div>
+    </div>
+</zk>

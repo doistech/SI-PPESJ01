@@ -1,0 +1,23 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="container-fluid"
+         apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('br.com.doistech.ecclesiasystem.viewmodel.BannerVM')">
+        <div zclass="row">
+            <div zclass="col-md-12">
+                <div zclass="page-header">
+                    <n:h1>Controle de Banner</n:h1>
+                </div>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showList)">
+            <div zclass="col-md-12">
+                <include src="/banner/_list.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showForm)">
+            <div zclass="col-md-12">
+                <include src="/banner/_form.zul"/>
+            </div>
+        </div>
+    </div>
+</zk>

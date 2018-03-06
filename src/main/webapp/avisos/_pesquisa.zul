@@ -1,0 +1,35 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="row">
+        <div zclass="col-md-4">
+            <div zclass="form-group">
+                <label style="font-size: 18px;">Capelas</label>
+                <combobox width="100%" style="margin-top: 10px;">
+                    <!--model="@load(vm.sizes)" selectedItem="@bind(vm.shirtSize)">-->
+                    <!--<template name="model">-->
+                    <comboitem label="Sim"/>
+                    <comboitem label="Não"/>
+                    <!--</template>-->
+                </combobox>
+            </div>
+        </div>
+        <div zclass="col-md-4">
+            <div zclass="form-group">
+                <label style="font-size: 18px;">Nome</label>
+                <textbox zclass="form-control" style="margin-top: 10px;"/>
+            </div>
+        </div>
+        <div zclass="col-md-4">
+            <div zclass="form-group">
+                <label style="font-size: 18px;">Número da carteira</label>
+                <textbox zclass="form-control" style="margin-top: 10px;"/>
+            </div>
+        </div>
+    </div>
+    <div zclass="row">
+        <div zclass="col-md-12">
+            <div zclass="form-group">
+               <button zclass="btn btn-primary" label="Pesquisar"/>
+            </div>
+        </div>
+    </div>
+</zk>

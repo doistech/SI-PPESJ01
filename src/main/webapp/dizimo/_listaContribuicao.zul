@@ -1,0 +1,18 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <listbox mold="paging" pageSize="13" model="@load(vm.contribuicaoList)" selectedItem="@bind(vm.contribuicao)">
+        <listhead>
+            <!--<listheader label="ID"/>-->
+            <!--<listheader label="NOME"/>-->
+            <listheader label="MÊS"/>
+            <listheader label="VALOR R$"/>
+            <listheader label="DATA DE APURAÇÃO"/>
+        </listhead>
+        <template name="model" var="dizimo">
+            <listitem>
+                <listcell label="@bind(dizimo.dataReferencia) @converter('formatedDate',format='MMMM/yyyy')"></listcell>
+                <listcell label="@bind(dizimo.valor) @converter('formatedNumber', format='###,##0.00')"></listcell>
+                <listcell label="@bind(dizimo.dataApuracao) @converter('formatedDate',format='dd/MM/yyyy')"></listcell>
+            </listitem>
+        </template>
+    </listbox>
+</zk>

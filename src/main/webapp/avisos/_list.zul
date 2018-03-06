@@ -1,0 +1,26 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <listbox mold="paging" pageSize="10" model="@load(vm.avisoList)">
+        <listhead>
+            <listheader label="DE" style="width: 120px;"/>
+            <listheader label="ATÉ" style="width: 120px;"/>
+            <listheader label="DATA EVENTO" style="width: 120px;"/>
+            <listheader label="HORA EVENTO" style="width: 110px;"/>
+            <listheader label="TITULO"/>
+            <!--<listheader label="CELULAR"/>-->
+        </listhead>
+        <template name="model" var="aviso">
+            <listitem>
+                <listcell label="@bind(aviso.dataInicioVigencia)  @converter('formatedDate',format='dd/MM/yyyy')" style="width: 120px;"></listcell>
+                <listcell label="@bind(aviso.dataFimVigencia)  @converter('formatedDate',format='dd/MM/yyyy')" style="width: 120px;"></listcell>
+                <listcell label="@bind(aviso.dataEvento)  @converter('formatedDate',format='dd/MM/yyyy')" style="width: 120px;"></listcell>
+                <listcell label="@bind(aviso.hora)" style="width: 110px;"></listcell>
+                <listcell label="@bind(aviso.titulo)"></listcell>
+            </listitem>
+        </template>
+    </listbox>
+    <div zclass="row">
+        <div zclass="col-md-12" style="text-align: right;">
+            <button zclass="btn btn-success" label="Novo Aviso" style="margin-top:15px;" onClick="@command('novoAviso')"/>
+        </div>
+    </div>
+</zk>

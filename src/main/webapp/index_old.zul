@@ -1,0 +1,63 @@
+<?page title="Ecclesia System 1.0"?>
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <?link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"?>
+    <?link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"?>
+    <?script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"?>
+    <?link href="../assets/css/ecclesiasystem-admin.css" type="text/css" rel="stylesheet"?>
+
+    <div zclass="container-fluid" apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('br.com.doistech.ecclesiasystem.viewmodel.NavegacaoVM')" style="padding: 0!important; height: 100%;">
+        <div zclass="container-fluid" style="background:black; color: white; height:70px;">
+            <div zclass="col-md-2" style="text-align: left; margin-top:1.5%">
+                <label style="font-size:22px; color: white;">SI PPESJ</label>
+            </div>
+        </div>
+        <!--<n:nav class="navbar navbar-inverse">-->
+            <!--<div zclass="container-fluid">-->
+                <!--<div zclass="navbar-header">-->
+                    <!--<a zclass="navbar-brand" href="#">SI PPESJ</a>-->
+                <!--</div>-->
+                <!--<n:ul class="nav navbar-nav">-->
+                    <!--<n:li><a href="#">Home</a></n:li>-->
+                    <!--<n:li>-->
+                        <!--<a onClick="@command('changePage', contexto = 'paroquiano')">Paroquiano</a>-->
+                    <!--</n:li>-->
+                    <!--<n:li><a href="#">Pastorais</a></n:li>-->
+                    <!--<n:li>-->
+                        <!--<a onClick="@command('changePage', contexto = 'dizimo')">Dízimo</a>-->
+                    <!--</n:li>-->
+                <!--</n:ul>-->
+            <!--</div>-->
+        <!--</n:nav>-->
+        <div zclass="container-fluid" style=" height: 100%;">
+            <div zclass="row" style=" height: 100%;">
+                <div zclass="col-md-2" style="background:black; color: white; height: 100%;">
+                    <div zclass="row" style=" height: 100%;">
+                        <!--<div zclass="col-md-12" style="text-align: center;">-->
+                            <!--<a zclass="navbar-brand" href="#">SI PPESJ</a>-->
+                        <!--</div>-->
+                        <div zclass="col-md-12" style="text-align: center;">
+                            <a zclass="navbar-brand" href="#">HOME</a>
+                        </div>
+                        <div zclass="col-md-12" style="text-align: center;">
+                            <a zclass="navbar-brand" onClick="@command('changePage', contexto = 'paroquiano')">POROQUIANO</a>
+                        </div>
+                        <div zclass="col-md-12" style="text-align: center;">
+                            <a zclass="navbar-brand" href="#">PASTORAIS</a>
+                        </div>
+                        <div zclass="col-md-12" style="text-align: center;">
+                            <a zclass="navbar-brand" onClick="@command('changePage', contexto = 'dizimo')">DÍZIMO</a>
+                        </div>
+                        <div zclass="col-md-12" style="text-align: center;">
+                            <a zclass="navbar-brand" onClick="@command('changePage', contexto = 'avisos')">AVISOS</a>
+                        </div>
+                    </div>
+                    <!--<include src="/_menu.zul"/>-->
+                </div>
+                <div zclass="col-md-10" style="max-height: 100%; overflow: scroll;">
+                    <include src="@load(vm.currentPage)"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</zk>

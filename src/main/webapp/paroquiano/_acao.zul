@@ -1,0 +1,9 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="row">
+        <div zclass="col-md-12" style="text-align: right; padding-right: 30px;">
+            <button zclass="btn btn-primary" label="Voltar" style="width: 100px;" onClick="@command('retornar')"/>
+            <button zclass="btn btn-success" label="Salvar" style="width: 100px;" onClick="@command('save')"/>
+        </div>
+    </div>
+    <n:br/>
+</zk>

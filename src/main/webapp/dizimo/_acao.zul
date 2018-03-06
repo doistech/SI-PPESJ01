@@ -1,0 +1,10 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="row">
+        <n:br/>
+        <div zclass="col-md-12" style="text-align: right; padding-right: 15px;">
+            <button zclass="btn btn-primary" label="Voltar" style="width: 100px;" onClick="@command('voltar')"/>
+            <button zclass="btn btn-success" label="Outros Pagamentos"/>
+        </div>
+    </div>
+    <n:br/>
+</zk>

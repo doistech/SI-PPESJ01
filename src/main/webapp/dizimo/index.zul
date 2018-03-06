@@ -1,0 +1,40 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <div zclass="container-fluid"
+         apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('br.com.doistech.ecclesiasystem.viewmodel.DizimoVM')">
+        <div zclass="row">
+            <div zclass="col-md-12">
+                <div zclass="page-header">
+                    <n:h1>Controle de Dizimista</n:h1>
+                </div>
+            </div>
+        </div>
+        <n:br/>
+        <div zclass="row" visible="@load(vm.showErroPermissao)">
+            <div zclass="col-md-12">
+                <include src="/dizimo/_pageError.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showDizimista)">
+            <div zclass="col-md-12">
+                <include src="/dizimo/_pesquisa.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showDizimista)">
+            <div zclass="col-md-12">
+               <include src="/dizimo/_list.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showContribuicao)">
+            <div zclass="col-md-12">
+                <include src="/dizimo/_formContribuicao.zul"/>
+            </div>
+        </div>
+        <div zclass="row" visible="@load(vm.showContribuicao)">
+            <div zclass="col-md-12">
+                <include src="/dizimo/_listaContribuicao.zul"/>
+            </div>
+        </div>
+        <include src="/dizimo/_acao.zul" visible="@load(vm.showContribuicao)"/>
+    </div>
+</zk>
